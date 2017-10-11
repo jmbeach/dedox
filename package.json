@@ -1,0 +1,50 @@
+{
+  "name": "dedox",
+  "version": "1.0.0",
+  "description": "Tool to help people prevent themselves from being doxed",
+  "main": "./lib/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "babel src --out-dir lib",
+    "prepublishOnly": "npm run build",
+    "test": "mocha"
+  },
+  "keywords": [
+    "dox",
+    "dedox",
+    "doxing"
+  ],
+  "author": "Jared Beach",
+  "license": "MIT",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "nightmare": "^2.6.0",
+    "nightmare-upload": "^0.1.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-register": "^6.26.0",
+    "eslint": "^4.8.0",
+    "mocha": "^4.0.1"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ]
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  }
+}
